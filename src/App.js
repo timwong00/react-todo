@@ -14,14 +14,18 @@ class App extends Component {
 
   handleChange(id) {
     this.setState(prevState => {
+      // returns new version of state
       const updatedTodos = prevState.todo.map(todo => {
+        // changes the completed boolean based on id
         if (todo.id === id) {
           todo.completed = !todo.completed;
         }
+        // returns the todo array
         return todo;
       });
       return {
-        todos: updatedTodos
+        // todo is set to the updated todo with "completed" change
+        todo: updatedTodos
       };
     });
   }
