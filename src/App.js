@@ -35,7 +35,12 @@ class App extends Component {
       <TodoItem key={item.id} item={item} handleChange={this.handleChange} />
     ));
 
-    return <div>{todoItems}</div>;
+    return (
+      <section className="container">
+        <h1 className="title">To do list</h1>
+        <div className="todo-container">{todoItems}</div>
+      </section>
+    );
   }
 }
 
